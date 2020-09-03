@@ -1,16 +1,16 @@
-﻿<h3>
-	All Bugs
-</h3>
-<tabel>
+﻿<h3>All Bugs</h3>
+
+<table>
 	<thead>
-		<tr>
-			<th>Id</th>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Priority</th>
-		</tr>
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Priority</th>
+	</tr>
 	</thead>
-	@foreach (var bug in Bugs){
+	@foreach (var bug in Bugs)
+	{
 		<tr>
 			<td>@bug.Id</td>
 			<td>@bug.Title</td>
@@ -18,7 +18,7 @@
 			<td>@bug.Priority</td>
 		</tr>
 	}
-</tabel>
+</table>
 
 @code
 {
