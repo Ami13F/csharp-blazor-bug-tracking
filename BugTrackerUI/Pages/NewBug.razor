@@ -4,6 +4,18 @@
 
 @code{
 	public Bug AddBug { get; set; } = new Bug();
+
+	[Inject]
+	public IBugService BugService { get; set; }
+
+	[Inject] 
+	public NavigationManager NavService { get; set; }
+
+	protected void HandleValidSubmit()
+	{
+		BugService.AddBug(@AddBug);
+		NavService.NavigateTo("");
+	}
 }
 
 <EditForm Model="AddBug">
@@ -13,6 +25,6 @@
 	<InputNumber @bind-Value="@AddBug.Priority" placeholder="Enter Priority"/>
 	
 
-	<button type="submit">Add Bug</button>
+	<button type="submit" OnValidSubmit="HandleValidSubmit">Add Bug</button>
 
 </EditForm>
